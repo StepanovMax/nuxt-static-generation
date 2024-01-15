@@ -1,0 +1,22 @@
+html {
+  @apply h-full;
+}
+
+body {
+  @apply h-full min-h-full flex flex-col text-base leading-4 font-normal;
+  font-family: $sm-font-family-base;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: theme("colors.black");
+}
+
+.sm-app {
+  @apply h-full min-h-full flex flex-col;
+}
+
+#__nuxt {
+  @apply h-screen;
+}
+
+.sm-content {
+  @apply flex flex-col grow shrink-0 basis-auto;
+}

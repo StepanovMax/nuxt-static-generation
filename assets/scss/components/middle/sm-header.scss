@@ -1,0 +1,54 @@
+.sm-header {
+  @apply
+    py-4
+    theme-default:bg-gray-500
+    theme-dark:bg-gray-400
+  ;
+
+  &__container {
+    @extend .sm-container !optional;
+    @apply flex flex-col justify-center items-center gap-y-4;
+  }
+
+  &__top {
+    @apply flex flex-row justify-between items-center w-full;
+
+    &-left {
+      @apply flex flex-row justify-start items-center gap-x-4;
+    }
+
+    &-right {
+      @apply flex flex-row justify-end items-center gap-x-4;
+    }
+  }
+
+  &__btn {
+    &_theme-switcher {
+      svg {
+        @apply
+          w-4 h-4 
+          theme-default:fill-black
+          theme-dark:fill-white
+        ;
+      }
+    }
+  }
+
+  &__icon {
+    @apply w-4 h-4;
+
+    &_sun {
+      @apply
+        theme-default:collapse
+        theme-dark:visible
+      ;
+    }
+
+    &_moon {
+      @apply
+        theme-default:visible
+        theme-dark:collapse
+      ;
+    }
+  }
+}

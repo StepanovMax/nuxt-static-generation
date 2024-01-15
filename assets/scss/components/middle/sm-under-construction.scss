@@ -1,0 +1,7 @@
+.sm-under-construction {
+  @apply flex flex-col items-center justify-center px-4 py-2 bg-gray-100;
+
+  &__title {
+    @apply text-xl leading-4 text-center font-normal text-black;
+  }
+}

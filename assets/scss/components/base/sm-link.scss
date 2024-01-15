@@ -1,0 +1,17 @@
+.link {
+  @apply cursor-pointer;
+
+  &_view {
+    &-1 {
+      @apply text-blue-700;
+    }
+
+    &-2 {
+      @apply text-gray-300;
+    }
+  }
+
+  &:hover {
+    @apply underline;
+  }
+}

@@ -1,0 +1,9 @@
+.sm-logo {
+  &__link {
+    @apply no-underline;
+  }
+
+  &__icon {
+    @apply w-32 h-12;
+  }
+}

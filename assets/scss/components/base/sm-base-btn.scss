@@ -1,0 +1,184 @@
+.sm-base-btn {
+  @apply flex justify-between items-center cursor-pointer gap-3 text-sm px-3 py-1;
+
+  &__label {
+    @apply flex justify-center items-center;
+    transition: color .3s;
+
+    &_primary {
+      @apply text-white;
+
+      &-disabled {
+        @apply text-gray-300;
+      }
+    }
+  }
+
+  &__icon {
+    @apply flex justify-center items-center;
+    transition: fill .3s;
+
+    svg {
+      transition: fill .3s;
+    }
+
+    &_primary {
+      &-disabled {
+        svg {
+          @apply fill-gray-300;
+        }
+      }
+    }
+
+    &_primary svg {
+      fill: inherit;
+    }
+
+    &_secondary svg {
+      fill: inherit;
+    }
+
+    &_tertiary svg {
+      fill: inherit;
+    }
+
+    &_fourth svg {
+      @apply fill-blue-700;
+    }
+  }
+
+  &_order {
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &_square {
+    padding: calc(2px + 0.4vw);
+    aspect-ratio: 1;
+    justify-content: center;
+  }
+
+  &_primary {
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    font-size: 16px;
+    border: none;
+    @apply text-white bg-blue-700;
+
+    &:hover {
+      @apply bg-blue-700/75;
+    }
+
+    &:active {
+      @apply bg-blue-700/50;
+    }
+
+    &-disabled {
+      @apply bg-gray-300;
+
+      &:hover {
+        @apply bg-gray-300;
+      }
+    }
+  }
+
+  &_secondary {
+    background: transparent;
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    transition: background .3s;
+    @apply border-blue-700 text-blue-700;
+
+    &:hover {
+      @apply text-white bg-blue-700;
+
+      svg {
+        @apply fill-white;
+      }
+    }
+
+    &:active {
+      filter: drop-shadow(0px 0px 20px rgba(6, 165, 255, 0.3));
+      backdrop-filter: blur(38px);
+    }
+
+    &-disabled {
+      @apply text-gray-300 border-gray-400 bg-transparent;
+
+      svg {
+        @apply fill-gray-300;
+      }
+    }
+  }
+
+  &_tertiary {
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    font-size: calc(12px + 0.2vw);
+    background: transparent;
+    border: none;
+
+    &:hover {
+      @apply text-blue-700/75 fill-blue-700/75;
+    }
+
+    &:active {
+      @apply text-blue-700;
+
+      svg {
+        @apply fill-blue-700;
+      }
+    }
+
+    &-disabled {
+      @apply text-gray-300;
+
+      svg {
+        @apply fill-gray-300;
+      }
+
+      &:hover {
+        @apply text-gray-300/75 fill-gray-300/75;
+      }
+    }
+  }
+
+  &_fourth {
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(38px);
+    border-radius: 6px;
+    @apply bg-gray-300 text-blue-700;
+
+    &:active {
+      filter: drop-shadow(0px 0px 20px rgba(6, 165, 255, 0.3));
+      backdrop-filter: blur(38px);
+    }
+
+    &:hover {
+      @apply bg-gray-300;
+    }
+
+    &-disabled {
+      opacity: 0.8;
+      @apply bg-gray-300/25;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+
+    &:active {
+      filter: none;
+      outline: none;
+    }
+
+    &:focus {
+      filter: none;
+      outline: none;
+    }
+  }
+}
