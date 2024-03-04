@@ -5,7 +5,7 @@
     @extend .link !optional;
     @apply
       no-underline xl:text-base lg:text-sm md:text-sm sm:text-sm xs:text-sm xxs:text-sm
-      theme-default:text-black
+      theme-light:text-black
       theme-dark:text-white
     ;
 

@@ -9,7 +9,7 @@ const menuArray = [
     id: 1,
     title: 'Страница компонентов',
     url: '/storybook'
-  }
+  },
 ];
 </script>
 

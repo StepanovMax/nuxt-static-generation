@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlBeautifyPlugin from 'html-beautify-webpack-plugin';
+import beautify from 'vite-plugin-beautify';
 
 console.log(process.env.NODE_ENV);
 
@@ -13,9 +14,16 @@ export default defineNuxtConfig({
     inlineSSRStyles: false
   },
   modules: [
-    '@nuxtjs/tailwindcss',
     'nuxt-svgo',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: ['en', 'ru'],  // used in URL path prefix
+    defaultLocale: 'en',    // default locale of your project for Nuxt pages and routings
+    vueI18n: './i18n.config.ts' // if you are using custom path, default 
+  },
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -40,6 +48,7 @@ export default defineNuxtConfig({
       done (builder) {
         console.log('build:done event hit');
         console.log(builder);
+        beautify({ inDir: 'dist' });
       }
     }
   },
@@ -116,6 +125,20 @@ export default defineNuxtConfig({
   svgo: {
     global: true,
     defaultImport: 'component',
+    svgo: true,
+    autoImportPath: './assets/icons/',
+    svgoConfig: undefined,
+    plugins: [
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            removeViewBox: false
+          }
+        }
+      },
+      'removeDimensions'
+    ]
   },
   devtools: {
     enabled: true,

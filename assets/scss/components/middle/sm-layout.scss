@@ -1,3 +1,18 @@
 .sm-layout {
-  @apply flex flex-col relative h-full min-h-full;
+  @apply
+    relative z-30
+    flex flex-col relative h-full min-h-full
+  ;
+
+  &__container {
+    @extend .sm-container !optional;
+  }
+
+  &__header {
+    @apply py-8;
+  }
+
+  &__title {
+    @extend .title, .title_h1;
+  }
 }

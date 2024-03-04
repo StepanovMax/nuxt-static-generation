@@ -1,9 +1,63 @@
 const plugin = require('tailwindcss/plugin');
 
+const radialGradientPlugin = plugin(
+  function ({ matchUtilities, theme }) {
+    matchUtilities(
+      {
+        // map to bg-radient-[*]
+        'bg-radient': value => ({
+          'background-image': `radial-gradient(${value},var(--tw-gradient-stops))`,
+        }),
+      },
+      { values: theme('radialGradients') }
+    )
+  },
+  {
+    theme: {
+      radialGradients: _presets(),
+    },
+  }
+)
+
+/**
+ * utility class presets
+ */
+function _presets() {
+  const shapes = ['circle', 'ellipse'];
+  const pos = {
+    c: 'center',
+    t: 'top',
+    b: 'bottom',
+    l: 'left',
+    r: 'right',
+    tl: 'top left',
+    tr: 'top right',
+    bl: 'bottom left',
+    br: 'bottom right',
+  };
+  let result = {};
+  for (const shape of shapes)
+    for (const [posName, posValue] of Object.entries(pos))
+      result[`${shape}-${posName}`] = `${shape} at ${posValue}`;
+
+  return result;
+}
+
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  plugins: [radialGradientPlugin],
+}
+
+
 module.exports = {
   content: ["./src/components/**/*.{js,vue,ts}", "./src/pages/**/*.vue", "./src/app.vue"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,212,255,0) 100%)',
+      },
+    },
     fontSize: {
       '4xl': '2rem',
       '3xl': '1.8rem',
@@ -25,6 +79,7 @@ module.exports = {
         600: "#F4DEFF",
         700: "#0D4CD3",
         800: "#9DACCE",
+        901: "#010D18",
       },
       gray: {
         100: "#EEF2FE",
@@ -37,7 +92,7 @@ module.exports = {
         502: "#939197",
         503: "#F5F9FF",
         504: "#19191B",
-        505: "#272727",
+        505: "#19191B",
       },
       yellow: {
         100: "#F0FFF3",
@@ -63,7 +118,7 @@ module.exports = {
   },
   plugins: [
     plugin(function({addVariant}) {
-      addVariant('theme-default', '.sm-app:has(.theme-default) &');
+      addVariant('theme-light', '.sm-app:has(.theme-light) &');
       addVariant('theme-dark', '.sm-app:has(.theme-dark) &');
     }),
   ],

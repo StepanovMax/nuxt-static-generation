@@ -3,10 +3,18 @@
 
 <template>
   <div class="sm-page-home">
-    <div class="sm-page-home__container">
-      <p class="paragraph">
-        Page content here ...
-      </p>
+    <div class="sm-layout__container">
+      <header class="sm-layout__header">
+        <h1 class="sm-layout__title">
+          {{ $t('homepage.title') }}
+        </h1>
+      </header>
+
+      <div class="sm-layout__content">
+        <p class="paragraph">
+          {{ $t('homepage.content') }}
+        </p>
+      </div>
     </div>
   </div>
 </template>

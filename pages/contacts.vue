@@ -3,10 +3,18 @@
 
 <template>
   <div class="sm-page-home">
-    <div class="sm-page-home__container">
-      <p class="paragraph">
-        Page contacts
-      </p>
+    <div class="sm-layout__container">
+      <header class="sm-layout__header">
+        <h1 class="sm-layout__title">
+          {{ $t('contacts.title') }}
+        </h1>
+      </header>
+
+      <div class="sm-layout__content">
+        <p class="paragraph">
+          {{ $t('contacts.content') }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +29,10 @@
   &__container {
     @extend .sm-container !optional;
     @apply py-4;
+  }
+
+  &__title {
+    @extend .title, .title_h1 !optional;
   }
 }
 </style>

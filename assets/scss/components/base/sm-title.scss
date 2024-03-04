@@ -1,5 +1,9 @@
 .title {
-  @apply text-gray-400 font-bold;
+  @apply
+  theme-light:text-gray-400
+  theme-dark:text-white
+    font-bold
+  ;
 
   &_h1 {
     @apply xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl leading-8;

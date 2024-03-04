@@ -13,10 +13,10 @@ import SMLogoIcon from "@/assets/icons/logo/logo.svg";
         'sm-logo__link_asd',
       ]"
     >
+    </nuxt-link>
       <SMLogoIcon
         class="sm-logo__icon"
       />
-    </nuxt-link>
   </div>
 </template>
 
@@ -34,14 +34,14 @@ import SMLogoIcon from "@/assets/icons/logo/logo.svg";
   .path {
     &_dark {
       @apply
-        theme-default:fill-gray-505
+        theme-light:fill-gray-505
         theme-dark:fill-white
       ;
     }
 
     &_white {
       @apply
-        theme-default:fill-white
+        theme-light:fill-white
         theme-dark:fill-gray-505
       ;
     }

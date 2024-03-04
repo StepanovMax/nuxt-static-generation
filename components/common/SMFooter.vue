@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SMSocialLinks from '@/components/middle/SMSocialLinks.vue';
-import YaCounter from '@/assets/images/ya-counter.jpg';
+import SMMetrika from '@/components/middle/SMMetrika.vue';
 import IconOk from '@/assets/icons/social/sm-ok.svg';
 import IconVk from '@/assets/icons/social/sm-vk.svg';
 
@@ -105,7 +105,7 @@ const socialArray = [
 
 <template>
   <footer class="sm-footer">
-    <div class="sm-footer__container">
+    <div class="sm-layout__container">
       <div class="sm-footer__top">
         <div
           :class="[
@@ -119,34 +119,18 @@ const socialArray = [
             :data="menuArray"
           />
         </div>
-        <div class="sm-footer__top-grid sm-footer__top-grid_social">
-          <SMSocialLinks
-            :data="socialArray"
-          />
-        </div>
       </div>
 
       <div class="sm-footer__bottom">
         <div
           :class="[
             'sm-footer__bottom-grid',
-            'sm-footer__bottom-grid_privacy',
-          ]"
-        >
-          <router-link
-            to="/privacy-policy"
-            class="sm-footer__link"
-          >
-            Политика конфиденциальности
-          </router-link>
-        </div>
-        <div
-          :class="[
-            'sm-footer__bottom-grid',
             'sm-footer__bottom-grid_counter',
           ]"
         >
-          <img :src="YaCounter" />
+          <SMMetrika
+            v-if="false"
+          />
         </div>
       </div>
     </div>

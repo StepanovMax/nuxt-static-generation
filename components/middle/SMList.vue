@@ -30,6 +30,7 @@ withDefaults(defineProps<IProps>(), {
         ]"
     >
       <nuxt-link
+        :title="item.title"
         :to="item.url"
         :class="[
           'sm-list__link',

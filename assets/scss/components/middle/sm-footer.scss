@@ -1,6 +1,7 @@
 .sm-footer {
-  @apply shrink-0 py-6 mt-10
-    theme-default:bg-gray-101 theme-dark:bg-gray-400;
+  @apply
+    shrink-0 py-6 mt-10
+  ;
 
   &__top {
     @apply py-8 grid grid-cols-4 gap-4;
@@ -37,7 +38,7 @@
   &__container {
     @extend .sm-container !optional;
     @apply divide-y divide-solid
-      theme-default:divide-blue-101 theme-dark:divide-white;
+      theme-light:divide-blue-101 theme-dark:divide-white;
   }
 
   &__link {
